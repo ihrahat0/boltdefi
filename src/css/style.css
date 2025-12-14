@@ -9290,3 +9290,186 @@ ul.smothscroll a:hover {
 
 /* Media Screen 320px - End
 ================================================== */
+/* Core Features Section */
+.core_features_section {
+  position: relative;
+  z-index: 1;
+}
+
+.feature_card {
+  background: radial-gradient(circle at top left, rgba(var(--bs-primary-rgb), 0.15), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(var(--bs-secondary-rgb), 0.15), transparent 40%),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 50px 30px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover State */
+.feature_card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(var(--bs-primary-rgb), 0.5);
+  background: radial-gradient(circle at top left, rgba(var(--bs-primary-rgb), 0.25), transparent 50%),
+    radial-gradient(circle at bottom right, rgba(var(--bs-secondary-rgb), 0.25), transparent 50%),
+    rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px -10px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.feature_icon {
+  font-size: 60px;
+  margin-bottom: 30px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 0 15px rgba(var(--bs-primary-rgb), 0.4));
+}
+
+.feature_card:hover .feature_icon {
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0 0 25px rgba(var(--bs-primary-rgb), 0.7));
+}
+
+.feature_title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #133a1f;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature_description {
+  font-size: 17px;
+  color: rgba(8, 10, 11, 0.8);
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
+
+/* Shine effect on hover */
+.feature_card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.05) 45%, rgba(255, 255, 255, 0.1) 50%, transparent 54%);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.feature_card:hover::after {
+  left: 100%;
+  transition: 0.7s;
+}
+
+/* Active Border Gradient */
+.feature_card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 50%, rgba(var(--bs-secondary-rgb), 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.feature_card:hover::before {
+  opacity: 1;
+  background: linear-gradient(135deg, var(--bs-primary), transparent 50%, var(--bs-secondary));
+}
+
+/* Card Glow Backgrounds */
+.card_glow_bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  z-index: 0;
+  opacity: 0.15;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.card_glow_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: blur(20px);
+}
+
+.feature_card:hover .card_glow_bg {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.feature_content_wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* Decoration Shapes */
+.shape_zigzag {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 200px;
+  opacity: 0.1;
+  z-index: -1;
+  animation: animationSpin 20s linear infinite;
+}
+
+.shape_feature_bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  width: 100%;
+  max-width: 1400px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.card_net_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.card_net_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature_card:hover .card_net_bg {
+  opacity: 0.2;
+}

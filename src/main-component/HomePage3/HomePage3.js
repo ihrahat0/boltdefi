@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Header3 from '../../components/header3/Header3';
 import Hero3 from '../../components/hero3/hero3';
 import AboutPepe from '../../components/Pepecoin-Components/about/about';
+import CoreFeatures from '../../components/Pepecoin-Components/CoreFeatures/CoreFeatures';
 import FeaturesSection from '../../components/Pepecoin-Components/FeaturesSection/FeaturesSection';
 import TokenomicsSection from '../../components/Pepecoin-Components/TokenomicsSection/TokenomicsSection';
 import RoadmapSection from '../../components/Pepecoin-Components/RoadmapSection/RoadmapSection';
@@ -18,6 +19,7 @@ const HomePage3 = () => {
                 <main className="page_content">
                     <Hero3 />
                     <AboutPepe />
+                    <CoreFeatures />
                     <FeaturesSection />
                     <TokenomicsSection />
                     <RoadmapSection />

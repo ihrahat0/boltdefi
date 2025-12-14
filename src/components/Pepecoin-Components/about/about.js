@@ -28,15 +28,6 @@ const AboutPepe = () => {
                   <p className="heading_description mb-4">
                     $BOLT is a high-energy meme asset powered by pure speed and DeFi utility. Every transaction, every stake, every reward — fast, fun, and electric.
                   </p>
-                  <div className="text-start">
-                    <h3 className="h4 text-uppercase mb-3">Core Features:</h3>
-                    <ul className="heading_description">
-                      <li className="mb-2">⚡ <strong>Lightning Staking:</strong> Stake and earn instantly. Rewards scale based on community speed.</li>
-                      <li className="mb-2">⚡ <strong>Thunder Pools:</strong> High-APY pools unlocked as trading volume increases.</li>
-                      <li className="mb-2">⚡ <strong>ShockEvents:</strong> Random community events with bonus airdrops and multipliers.</li>
-                      <li>⚡ <strong>AirStrike Rewards:</strong> New holders trigger redistribution to active stakers.</li>
-                    </ul>
-                  </div>
                 </div>
               </div>
               <div className="shape_board_image">
