@@ -5246,6 +5246,7 @@ input[type=search]::-webkit-search-results-decoration {
   background: -webkit-gradient(linear, left bottom, left top, from(#4E47A6), to(#101122));
   background: linear-gradient(0deg, #4E47A6, #101122);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -7079,6 +7080,7 @@ input[type=search]::-webkit-search-results-decoration {
   font-size: 36px;
   background: -webkit-linear-gradient(-45deg, var(--bs-primary), var(--bs-secondary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -9472,4 +9474,188 @@ ul.smothscroll a:hover {
 
 .feature_card:hover .card_net_bg {
   opacity: 0.2;
+}
+
+/* Launch Modal Styles */
+.launch_modal_backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 11, 20, 0.85);
+  backdrop-filter: blur(15px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.launch_modal_backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.launch_modal_content {
+  width: 90%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 50px 40px;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.launch_modal_backdrop.open .launch_modal_content {
+  transform: scale(1) translateY(0);
+}
+
+/* Modal Glow effect */
+.launch_modal_content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(var(--bs-primary-rgb), 0.15), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.launch_modal_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--bs-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.launch_modal_close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(90deg);
+}
+
+.launch_icon_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.launch_icon {
+  font-size: 80px;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(var(--bs-primary-rgb), 0.6));
+}
+
+.launch_pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(var(--bs-primary-rgb), 0.5);
+  opacity: 0;
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+.launch_title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--bs-white);
+  letter-spacing: 1px;
+}
+
+.text_gradient {
+  background: linear-gradient(135deg, #FF3BD4 0%, #7130C3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.launch_message {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.launch_status_box {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status_indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.blink_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+  display: block;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }

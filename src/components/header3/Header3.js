@@ -4,11 +4,12 @@ import MobileMenu3 from '../MobileMenu3/MobileMenu3';
 import { NavLink } from 'react-router-dom'
 import Logo from '../../images/site_logo/site_logo_3.svg'
 import Logo2 from '../../images/site_logo/site_logo_4.svg'
+import LaunchModal from '../LaunchModal/LaunchModal';
 
 const Header3 = (props) => {
 
     const [mobailActive, setMobailState] = useState(false);
-
+    const [launchModalOpen, setLaunchModalOpen] = useState(false);
     const [isSticky, setSticky] = useState(false);
 
     useEffect(() => {
@@ -85,20 +86,21 @@ const Header3 = (props) => {
                                     </button>
                                 </li>
                                 <li>
-                                    <NavLink onClick={ClickHandler} className="pepecoin_btn text-dark" to="/sign_in">
+                                    <div className="pepecoin_btn text-dark" onClick={() => setLaunchModalOpen(true)} style={{ cursor: 'pointer' }}>
                                         <span className="btn_label">Buy $BOLT</span>
                                         <span className="btn_bg">
                                             <svg viewBox="0 0 180 62" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1.08526 12.4119C-0.482482 6.10381 4.29004 0 10.79 0H169.211C175.711 0 180.484 6.10384 178.916 12.4119L175.495 26.1761C174.708 29.3439 174.708 32.6561 175.495 35.8239L178.916 49.5881C180.484 55.8962 175.711 62 169.211 62H10.79C4.29004 62 -0.48248 55.8962 1.08526 49.5881L4.50607 35.8238C5.29333 32.6561 5.29333 29.3439 4.50607 26.1762L1.08526 12.4119Z" fill="#FBE354" />
                                             </svg>
                                         </span>
-                                    </NavLink>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            <LaunchModal isOpen={launchModalOpen} onClose={() => setLaunchModalOpen(false)} />
         </header>
 
         // <header >

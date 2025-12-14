@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LaunchModal from '../../LaunchModal/LaunchModal';
 import { Link } from 'react-router-dom';
 import featureBg from '../../../images/shapes/pepecoin_feature_bg_image_1.webp';
 import cloudImg from '../../../images/shapes/shape_cloud_1.png';
@@ -36,6 +37,7 @@ const steps = [
 ];
 
 const FeaturesSection = () => {
+  const [launchModalOpen, setLaunchModalOpen] = useState(false);
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -76,14 +78,14 @@ const FeaturesSection = () => {
         </div>
 
         <div className="btns_group pb-0 mt-4 justify-content-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-          <Link className="pepecoin_btn text-white" to="/token" onClick={ClickHandler}>
+          <div className="pepecoin_btn text-white" onClick={() => setLaunchModalOpen(true)} style={{ cursor: 'pointer' }}>
             <span className="btn_label">Buy Now</span>
             <span className="btn_bg">
               <svg viewBox="0 0 180 62" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.08526 12.4119C-0.482482 6.10381 4.29004 0 10.79 0H169.211C175.711 0 180.484 6.10384 178.916 12.4119L175.495 26.1761C174.708 29.3439 174.708 32.6561 175.495 35.8239L178.916 49.5881C180.484 55.8962 175.711 62 169.211 62H10.79C4.29004 62 -0.48248 55.8962 1.08526 49.5881L4.50607 35.8238C5.29333 32.6561 5.29333 29.3439 4.50607 26.1762L1.08526 12.4119Z" fill="#0B902B"></path>
               </svg>
             </span>
-          </Link>
+          </div>
         </div>
       </div>
       <div className="shape_tree text-end" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
@@ -98,6 +100,7 @@ const FeaturesSection = () => {
       <div className="decoration_item shape_frog" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
         <img src={shape4} alt="Frog" />
       </div>
+      <LaunchModal isOpen={launchModalOpen} onClose={() => setLaunchModalOpen(false)} />
     </section>
   );
 };
