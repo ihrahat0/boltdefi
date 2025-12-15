@@ -412,6 +412,13 @@ span {
   color: var(--color-primary);
 }
 
+@media (max-width: 767px) {
+  .pepecoin_btn.text-dark {
+    display: none !important;
+  }
+}
+
+
 .btn-video::before {
   content: "";
   position: absolute;
