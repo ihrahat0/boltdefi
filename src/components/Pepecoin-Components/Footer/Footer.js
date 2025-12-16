@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="heading_description mb-0">
-                $BOLT – The Fastest Meme in Crypto. Powered by DeFi. Driven by community. Blink and you're already late.
+                $BOLT – Lightning-Fast. Secure. Decentralized.
               </p>
             </div>
             <div className="btns_group p-0 justify-content-center position-relative z-2">
