@@ -138,7 +138,7 @@ const RoadmapSection = () => {
             <div className="decoration_item shape_stone">
                 <img src={stoneImage} alt="Stone" />
             </div>
-            <div className="decoration_item shape_cartoon_1" data-aos="fade-right" data-aos-duration="800" style={{ top: '7%' }}>
+            <div className="decoration_item shape_cartoon_1" data-aos="fade-right" data-aos-duration="800" style={{ top: '10%' }}>
                 <img src={cartoonImage} alt="Stone" />
             </div>
 
