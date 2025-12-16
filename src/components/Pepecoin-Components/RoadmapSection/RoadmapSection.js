@@ -61,7 +61,7 @@ const roadmapPhases = [
     },
     {
         phase: "Phase 5",
-        title: "Ecosystem Growth",
+        title: "Ecosystem",
         icon: "🌍",
         goals: [
             "Multi-chain liquidity aggregation",
@@ -84,7 +84,7 @@ const RoadmapSection = () => {
                     <div className="col-lg-5">
                         <div className="roadmap_vision_wrapper">
                             <h2 className="roadmap_vision_title" data-aos="fade-right" data-aos-duration="800">
-                                Vision Ahead
+                                ROADMAP
                             </h2>
 
                         </div>
@@ -138,7 +138,7 @@ const RoadmapSection = () => {
             <div className="decoration_item shape_stone">
                 <img src={stoneImage} alt="Stone" />
             </div>
-            <div className="decoration_item shape_cartoon_1" data-aos="fade-right" data-aos-duration="800" style={{ top: '15%' }}>
+            <div className="decoration_item shape_cartoon_1" data-aos="fade-right" data-aos-duration="800" style={{ top: '7%' }}>
                 <img src={cartoonImage} alt="Stone" />
             </div>
 

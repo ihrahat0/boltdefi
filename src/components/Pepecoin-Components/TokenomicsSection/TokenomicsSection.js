@@ -1,53 +1,147 @@
 import React from 'react';
-import CountUp from 'react-countup';
-import signBoardBg from '../../../images/shapes/shape_sign_board_2.webp';
-import frogImage from '../../../images/shapes/shape_cartoon_12.webp';
-import treeWoodImage from '../../../images/shapes/shape_cartoon_9.webp';
-import shadowImage from '../../../images/shapes/shape_circle_9.svg';
-import grassImage from '../../../images/shapes/shape_grash_1.webp';
+import './TokenomicsSection.css';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 
-const treeShapes = [1, 2, 3, 4];
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const TokenomicsSection = () => {
+  const data = {
+    labels: ['Staking & Rewards', 'Liquidity', 'Growth & Treasury', 'Team'],
+    datasets: [{
+      data: [40, 30, 20, 10],
+      backgroundColor: [
+        'rgba(139, 92, 246, 0.9)',
+        'rgba(6, 182, 212, 0.9)',
+        'rgba(245, 158, 11, 0.9)',
+        'rgba(236, 72, 153, 0.9)'
+      ],
+      borderWidth: 0,
+      spacing: 3,
+      hoverOffset: 4
+    }]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: true,
+    cutout: '68%',
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: true,
+        backgroundColor: 'rgba(15, 15, 35, 0.95)',
+        titleColor: '#fff',
+        bodyColor: 'rgba(255, 255, 255, 0.8)',
+        borderColor: 'rgba(255, 255, 255, 0.1)',
+        borderWidth: 1,
+        padding: 16,
+        displayColors: true,
+        boxWidth: 14,
+        boxHeight: 14,
+        boxPadding: 8,
+        cornerRadius: 10,
+        titleFont: {
+          size: 15,
+          weight: '600',
+          family: 'Inter'
+        },
+        bodyFont: {
+          size: 14,
+          family: 'Inter'
+        },
+        callbacks: {
+          label: function (context) {
+            return context.label + ': ' + context.parsed + '%';
+          }
+        }
+      }
+    },
+    animation: {
+      animateRotate: true,
+      animateScale: true,
+      duration: 2000,
+      easing: 'easeInOutQuart'
+    }
+  };
+
+  const cardData = [
+    {
+      id: 1,
+      percent: 40,
+      label: "Staking & Rewards",
+      amount: "400 MILLION",
+      desc: "Distributed via staking smart contracts over time."
+    },
+    {
+      id: 2,
+      percent: 30,
+      label: "Liquidity",
+      amount: "300 MILLION",
+      desc: "Locked or protocol-owned for deep market depth."
+    },
+    {
+      id: 3,
+      percent: 20,
+      label: "Growth & Treasury",
+      amount: "200 MILLION",
+      desc: "Used for marketing, partnerships, and CEX listings."
+    },
+    {
+      id: 4,
+      percent: 10,
+      label: "Team",
+      amount: "100 MILLION",
+      desc: "12 months linear vesting after TGE."
+    }
+  ];
+
   return (
-    <section id="id_pepecoin_tokenomics_section" className="pepecoin_tokenomics_section section_space section_decoration bg-white overflow-hidden">
-      <div className="container">
-        <div className="pepecoin_heading_block text-center mt-lg-5" data-aos="fade-up" data-aos-duration="800">
-          <h2 className="heading_text text-uppercase mb-0">Tokenomics</h2>
+    <section id="id_pepecoin_tokenomics_section" className="pepecoin_tokenomics_section section_space section_decoration">
+      <div className="tokenomics_inner_container">
+        <div className="pepecoin_heading_block text-center mt-lg-5 mb-5" data-aos="fade-up" data-aos-duration="800">
+          <h2 style={{ color: "#fff" }} className="heading_text text-uppercase">Tokenomics</h2>
         </div>
 
-        <div className="pepecoin_token_supply" style={{ backgroundImage: `url(${signBoardBg})` }}>
-          <div className="row align-items-center">
-            <div className="col-lg-7">
-              <h3 className="heading_text">Token Supply:</h3>
-              <div className="token_supply_value">
-                <span className="odometer text-primary" data-count="1000000000"><CountUp end={1000000000} enableScrollSpy scrollSpyOnce /></span>
-              </div>
-              <div className="mb-0 heading_description">
-                <p className="mb-2"><strong>Distribution:</strong> 40% Staking, 30% Liquidity, 20% Marketing, 10% Team.</p>
-                <p className="mb-2"><strong>Taxes:</strong> 0% Buy, 2% Sell (fuels ShockRewards).</p>
-                <p className="mb-0"><strong>Liquidity:</strong> Burned or Locked for 1 year.</p>
+        <div className="dashboard" data-aos="fade-up">
+          <div className="content-wrapper">
+            <div className="chart-section">
+              <div className="chart-container">
+                <div className="chart-glow"></div>
+                <Doughnut data={data} options={options} />
+                <div className="center-label">
+                  <div className="center-label-title">Total supply</div>
+                  <div className="center-label-value">1 Billion</div>
+                </div>
               </div>
             </div>
-            <div className="col-lg-5">
-              <div className="image_block">
-                <img src={frogImage} alt="Frog" />
-              </div>
+
+            <div className="details-section">
+              {cardData.map((item) => (
+                <div key={item.id} className="detail-card">
+                  <div className="card-glow"></div>
+                  <div className="inner-glow"></div>
+                  <div className="sparkle"></div>
+                  <div className="detail-header">
+                    <div className="detail-left">
+                      <div className="detail-title">
+                        <span className="percentage">{item.percent}%</span>
+                        <span>{item.label}</span>
+                      </div>
+                    </div>
+                    <div className="detail-right">
+                      <div className="amount-label">Amount</div>
+                      <div className="amount-value">{item.amount}</div>
+                    </div>
+                  </div>
+                  <div className="detail-description">{item.desc}</div>
+                </div>
+              ))}
             </div>
           </div>
-
-          {treeShapes.map((shape, index) => (
-            <div key={index} className={`shape_tree_wood_${shape}`}>
-              <img src={treeWoodImage} alt="Tree Wood" />
-            </div>
-          ))}
         </div>
-      </div>
-      <div className="decoration_item shape_shadow">
-        <img src={shadowImage} alt="Shadow" />
-      </div>
-      <div className="decoration_item shape_grash">
-        <img src={grassImage} alt="Grass" />
       </div>
     </section>
   );

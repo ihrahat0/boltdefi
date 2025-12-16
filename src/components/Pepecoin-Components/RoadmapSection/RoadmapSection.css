@@ -114,6 +114,44 @@
     border-color: rgba(11, 144, 43, 0.5);
 }
 
+.roadmap_phase_header {
+    position: relative;
+    /* Ensure it floats above background */
+    z-index: 10;
+    margin-bottom: 20px;
+    border-bottom: none;
+    padding-bottom: 0;
+    text-align: center;
+    /* Center content */
+}
+
+.roadmap_phase_title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* White text */
+    margin: 0 auto;
+    /* Center the box itself if width < 100% */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center text inside the box */
+    gap: 8px;
+
+    /* Black pill box */
+    background: #000000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    /* Ensure title is top-most inside card */
+
+    width: 100%;
+    /* Make box full width as requested to "center text in box" implies box is wider */
+}
+
 .roadmap_card_overlay {
     background: rgba(255, 255, 255, 0.1);
     /* Light overlay for black text readability */
@@ -121,41 +159,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-}
-
-/* Clear text shadows for black text style */
-.roadmap_phase_title,
-.roadmap_goals_list li,
-.roadmap_focus p {
-    text-shadow: none;
-}
-
-.roadmap_phase_header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-bottom: none;
-    /* Removed border as header has its own background */
-    padding-bottom: 0;
-}
-
-.roadmap_phase_title {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #ffffff;
-    /* Black text */
-    margin: 0;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    /* User request: background with border radius 8px */
-    background: #000000;
-    padding: 10px 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    /* Sit above the card background image */
 }
 
 

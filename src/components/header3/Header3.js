@@ -75,8 +75,18 @@ const Header3 = (props) => {
                                                 <span className="nav_link_label" data-text="Roadmap">Roadmap</span>
                                             </Link>
                                         </li>
+                                        <li>
+                                            <div className="pepecoin_btn text-dark" onClick={() => setLaunchModalOpen(true)} style={{ cursor: 'pointer' }}>
+                                                <span className="btn_label">Buy $BOLT</span>
+                                                <span className="btn_bg">
+                                                    <svg viewBox="0 0 180 62" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1.08526 12.4119C-0.482482 6.10381 4.29004 0 10.79 0H169.211C175.711 0 180.484 6.10384 178.916 12.4119L175.495 26.1761C174.708 29.3439 174.708 32.6561 175.495 35.8239L178.916 49.5881C180.484 55.8962 175.711 62 169.211 62H10.79C4.29004 62 -0.48248 55.8962 1.08526 49.5881L4.50607 35.8238C5.29333 32.6561 5.29333 29.3439 4.50607 26.1762L1.08526 12.4119Z" fill="#FBE354" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </li>
                                     </ul>
-                                    <MobileMenu3 />
+                                    <MobileMenu3 setLaunchModalOpen={setLaunchModalOpen} />
                                 </div>
                             </nav>
                             <ul className="btns_group unordered_list p-0 justify-content-end">
@@ -84,16 +94,6 @@ const Header3 = (props) => {
                                     <button className="mobile_menu_btn text-white" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu_dropdown" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setMobailState(!mobailActive)}>
                                         <i className="far fa-bars"></i>
                                     </button>
-                                </li>
-                                <li>
-                                    <div className="pepecoin_btn text-dark" onClick={() => setLaunchModalOpen(true)} style={{ cursor: 'pointer' }}>
-                                        <span className="btn_label">Buy $BOLT</span>
-                                        <span className="btn_bg">
-                                            <svg viewBox="0 0 180 62" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1.08526 12.4119C-0.482482 6.10381 4.29004 0 10.79 0H169.211C175.711 0 180.484 6.10384 178.916 12.4119L175.495 26.1761C174.708 29.3439 174.708 32.6561 175.495 35.8239L178.916 49.5881C180.484 55.8962 175.711 62 169.211 62H10.79C4.29004 62 -0.48248 55.8962 1.08526 49.5881L4.50607 35.8238C5.29333 32.6561 5.29333 29.3439 4.50607 26.1762L1.08526 12.4119Z" fill="#FBE354" />
-                                            </svg>
-                                        </span>
-                                    </div>
                                 </li>
                             </ul>
                         </div>
