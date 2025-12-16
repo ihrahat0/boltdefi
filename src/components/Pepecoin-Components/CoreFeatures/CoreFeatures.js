@@ -10,30 +10,30 @@ import netShape from '../../../images/shapes/shape_net_2.svg';
 const CoreFeatures = () => {
     const features = [
         {
-            title: "Lightning Staking",
-            description: "Stake and earn instantly. Rewards scale based on community speed.",
+            title: "Staking Module",
+            description: "Stake $BOLT to earn protocol-generated rewards. Real-time reward calculation and dynamic APY.",
             icon: "⚡",
             delay: "100",
             glow: lightYellow
         },
         {
-            title: "Thunder Pools",
-            description: "High-APY pools unlocked as trading volume increases.",
-            icon: "🌩️",
+            title: "Liquidity Pools",
+            description: "Provide liquidity to earn trading fees + incentive rewards. Low slippage & optimized pool ratios.",
+            icon: "💧",
             delay: "200",
             glow: lightBlue
         },
         {
-            title: "ShockEvents",
-            description: "Random community events with bonus airdrops and multipliers.",
-            icon: "🔋",
+            title: "Reward Engine",
+            description: "Automatically redistributes protocol fees to stakers and liquidity providers. Self-sustaining ecosystem.",
+            icon: "🔄",
             delay: "300",
             glow: lightGreen
         },
         {
-            title: "AirStrike Rewards",
-            description: "New holders trigger redistribution to active stakers.",
-            icon: "✈️",
+            title: "Governance System",
+            description: "Holders propose and vote on protocol parameters, new pools, and treasury allocation.",
+            icon: "🧠",
             delay: "400",
             glow: lightPink
         }
@@ -46,10 +46,10 @@ const CoreFeatures = () => {
                     <div className="col-lg-8">
                         <div className="section_title text-center mb-5">
                             <h2 className="heading_text text-uppercase" data-aos="fade-up">
-                                Core Features
+                                Core Components
                             </h2>
                             <p className="heading_description mb-0" data-aos="fade-up" data-aos-delay="100">
-                                Electrifying utility powered by the speed of $BOLT
+                                The BoltDeFi Ecosystem combines staking, liquidity, and governance modules into a unified decentralized platform
                             </p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ const CoreFeatures = () => {
                                     <img src={netShape} alt="" />
                                 </div>
                                 <div className="feature_content_wrapper">
-                                    <div className="feature_icon mb-3">
+                                    <div className="feature_icon mb-5">
                                         <span className="icon_emoji">{feature.icon}</span>
                                     </div>
                                     <h3 className="feature_title text-uppercase mb-3">{feature.title}</h3>

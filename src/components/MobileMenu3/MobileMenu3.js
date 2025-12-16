@@ -9,63 +9,12 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home_ico',
-        submenu: [
-            {
-                id: 11,
-                title: '$BOLT ICO',
-                link: '/home_ico'
-            },
-            {
-                id: 12,
-                title: 'Memecoin',
-                link: '/home_memecoin'
-            },
-            {
-                id: 13,
-                title: 'Pepecoin',
-                link: '/home_pepecoin'
-            }
-        ]
-    },
-    {
-        id: 7,
-        title: 'My Account',
-        link: '/sign_in',
-        submenu: [
-            {
-                id: 71,
-                title: 'Sign In',
-                link: '/sign_in'
-            },
-            {
-                id: 72,
-                title: 'Sign Up',
-                link: '/sign_up'
-            },
-        ]
-    },
-    {
-        id: 6,
-        title: 'Blog',
-        link: '/blog',
-        submenu: [
-            {
-                id: 61,
-                title: 'Blog',
-                link: '/blog'
-            },
-            {
-                id: 62,
-                title: 'Blog Details',
-                link: '/blog-single/How-Our-Unique-Tokenomics-Ensures-Sustainable-Growth-and-Value'
-            },
-        ]
+        link: '#',
     },
     {
         id: 88,
         title: 'Contact',
-        link: '/contact',
+        link: '#',
     }
 
 

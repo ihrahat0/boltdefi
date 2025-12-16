@@ -1,63 +1,149 @@
 import React from 'react';
-import roadmapImage from '../../../images/shapes/shape_sign_board_3.webp';
+import './RoadmapSection.css';
+import roadmapBg from '../../../images/shapes/roadmap-bg.webp';
+import pepeCoinImg from '../../../images/shapes/shape_pepecoin_1.webp';
 import treeImage from '../../../images/shapes/shape_tree_1.webp';
 import stoneImage from '../../../images/shapes/shape_stone_2.webp';
 import cartoonImage from '../../../images/shapes/shape_cartoon_13.webp';
-import treeWoodImage from '../../../images/shapes/shape_cartoon_9.webp';
-import pepeCoinImage from '../../../images/shapes/shape_pepecoin_1.webp';
 
 const roadmapPhases = [
-  { text: 'Phase 1: Spark (Launch, Staking v1, Community)', animation: 'fade-right', delay: 100 },
-  { text: 'Phase 2: Charge (CEX Listings, ShockEvents)', animation: 'fade-left', delay: 200 },
-  { text: 'Phase 3: Overload (Staking v2, NFTs, Expansion)', animation: 'fade-right', delay: 300 },
-  { text: 'Phase 4: Megawatt (DAO, Swap, Utility)', animation: 'fade-left', delay: 400 },
+    {
+        phase: "Phase 1",
+        title: "Foundation",
+        icon: "⚡",
+        goals: [
+            "Launch of BoltDeFi Protocol on mainnet",
+            "Deploy staking v1 smart contracts",
+            "Establish initial liquidity pools",
+            "Launch $BOLT token on supported DEXs",
+            "Begin community growth and documentation"
+        ],
+        focus: "Secure base infrastructure and ensure stable staking yield distribution."
+    },
+    {
+        phase: "Phase 2",
+        title: "Expansion",
+        icon: "⚙️",
+        goals: [
+            "Introduce Liquidity Pool Optimization",
+            "Integrate advanced reward engine",
+            "Release analytics dashboard for stakers",
+            "Add cross-chain staking (BSC / ETH / SOL)",
+            "Form key DeFi partnerships"
+        ],
+        focus: "Strengthen ecosystem liquidity and expand user accessibility."
+    },
+    {
+        phase: "Phase 3",
+        title: "Scaling",
+        icon: "💹",
+        goals: [
+            "Launch Staking v2 with dynamic APR logic",
+            "Introduce BoltSwap DEX for native swaps",
+            "Implement Treasury yield strategies",
+            "Initiate NFT-based reward boosters",
+            "Begin DAO testing on testnet"
+        ],
+        focus: "Build user-driven, yield-optimized systems across multiple networks."
+    },
+    {
+        phase: "Phase 4",
+        title: "Governance & DAO",
+        icon: "🧠",
+        goals: [
+            "Launch BoltDAO",
+            "Enable on-chain governance and voting",
+            "Community control over treasury and pool parameters",
+            "Add proposal submission and execution system",
+            "Introduce cross-chain governance"
+        ],
+        focus: "Full decentralization of BoltDeFi operations and treasury management."
+    },
+    {
+        phase: "Phase 5",
+        title: "Ecosystem Growth",
+        icon: "🌍",
+        goals: [
+            "Multi-chain liquidity aggregation",
+            "Cross-protocol yield partnerships",
+            "Real-world asset (RWA) integrations",
+            "Launch of BoltDeFi Grants Program",
+            "Layer-2 support for gas efficiency"
+        ],
+        focus: "Expand BoltDeFi beyond a single network into a global DeFi utility layer."
+    }
 ];
 
-
 const RoadmapSection = () => {
-  return (
-    <section className="pepecoin_roadmap_section section_space pb-0 section_decoration" id='id_pepecoin_roadmap_section'>
-      <div className="container">
-        <div className="pepecoin_heading_block text-center" data-aos="fade-up" data-aos-duration="800">
-          <h2 className="heading_text text-uppercase mb-0 text-white">Roadmap</h2>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-lg-7 position-relative">
-            <ul className="pepecoin_roadmap_list unordered_list_block text-center text-uppercase">
-              {roadmapPhases.map((phase, index) => (
-                <li
-                  key={index}
-                  data-aos={phase.animation}
-                  data-aos-duration="800"
-                  data-aos-delay={phase.delay}
-                >
-                  {phase.text}
-                </li>
-              ))}
-            </ul>
-            <div className="pepecoin_roadmap_image">
-              <img src={roadmapImage} alt="Board" />
+    return (
+        <section className="pepecoin_roadmap_section section_space section_decoration" id='id_pepecoin_roadmap_section'>
+            <div className="container roadmap_container">
+                <div className="row">
+
+                    {/* Left Side - Vision (Sticky) */}
+                    <div className="col-lg-5">
+                        <div className="roadmap_vision_wrapper">
+                            <h2 className="roadmap_vision_title" data-aos="fade-right" data-aos-duration="800">
+                                Vision Ahead
+                            </h2>
+
+                        </div>
+                    </div>
+
+                    {/* Right Side - Timeline */}
+                    <div className="col-lg-7">
+                        <div className="roadmap_timeline_wrapper">
+                            {roadmapPhases.map((item, index) => (
+                                <div key={index} className="roadmap_phase_item" data-aos="fade-left" data-aos-duration="800" data-aos-delay={index * 100}>
+
+                                    {/* Timeline Marker */}
+                                    <div className="roadmap_phase_marker">
+                                        <span></span>
+                                    </div>
+
+                                    {/* Card */}
+                                    <div className="roadmap_card" style={{ backgroundImage: `url(${roadmapBg})` }}>
+                                        <div className="roadmap_card_overlay">
+
+                                            <div className="roadmap_phase_header">
+                                                <h3 className="roadmap_phase_title">
+                                                    <span className="text-primary me-2">{item.phase}</span> — {item.title}
+                                                </h3>
+
+                                            </div>
+
+                                            <ul className="roadmap_goals_list">
+                                                {item.goals.map((goal, i) => (
+                                                    <li key={i}>{goal}</li>
+                                                ))}
+                                            </ul>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="decoration_item shape_tree" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">
-        <img src={treeImage} alt="Tree" />
-      </div>
-      <div className="decoration_item shape_stone">
-        <img src={stoneImage} alt="Stone" />
-      </div>
-      <div className="decoration_item shape_cartoon_1" data-aos="fade-right" data-aos-duration="800">
-        <img src={cartoonImage} alt="Stone" />
-      </div>
-      <div className="decoration_item shape_tree_wood">
-        <img src={treeWoodImage} alt="Tree Wood" />
-      </div>
-      <div className="decoration_item pepe_coin_image">
-        <img src={pepeCoinImage} alt="Pepe Coin" />
-      </div>
-    </section>
-  );
+
+            {/* Background Decorations */}
+            <div className="shape_bg_glow"></div>
+
+            <div className="decoration_item shape_tree" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200" style={{ bottom: '10%' }}>
+                <img src={treeImage} alt="Tree" />
+            </div>
+            <div className="decoration_item shape_stone">
+                <img src={stoneImage} alt="Stone" />
+            </div>
+            <div className="decoration_item shape_cartoon_1" data-aos="fade-right" data-aos-duration="800" style={{ top: '15%' }}>
+                <img src={cartoonImage} alt="Stone" />
+            </div>
+
+        </section>
+    );
 };
 
 export default RoadmapSection;

@@ -26,7 +26,7 @@ const AboutPepe = () => {
                 </h2>
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                   <p className="heading_description mb-4">
-                    $BOLT is a high-energy meme asset powered by pure speed and DeFi utility. Every transaction, every stake, every reward — fast, fun, and electric.
+                    $BOLT is the native utility and governance token of the BoltDeFi Protocol. It powers all core functions of the ecosystem — including staking, liquidity rewards, and community governance.
                   </p>
                 </div>
               </div>
@@ -52,7 +52,7 @@ const AboutPepe = () => {
       <div className="decoration_item shape_cloud">
         <img src={cloud} alt="Cloud" />
       </div>
-    </section>
+    </section >
   );
 };
 

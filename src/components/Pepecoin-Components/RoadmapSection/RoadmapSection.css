@@ -1,0 +1,246 @@
+/* RoadmapSection.css */
+.pepecoin_roadmap_section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.roadmap_container {
+    padding: 0 15px;
+}
+
+/* Vision Sticky Section (Left) */
+.roadmap_vision_wrapper {
+    position: sticky;
+    top: 120px;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.roadmap_vision_title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.roadmap_vision_desc {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Timeline (Right) */
+.roadmap_timeline_wrapper {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns for phases */
+    gap: 20px;
+}
+
+.roadmap_timeline_wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background: #0B902B;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #0B902B;
+}
+
+.roadmap_phase_item {
+    position: relative;
+    margin-bottom: 0;
+    /* Removing large margin as we use grid gap */
+    padding-left: 0;
+}
+
+/* Markers only for the first column or adjust logic? 
+   With a grid, the single line on the left might look odd if items are far right.
+   Let's keep the line on the far left of the wrapper, and have items sit in the grid.
+   The items might not need individual markers on the line if they are in a grid, 
+   OR we connect them differently. For now, let's keep the marker on the card or hide it 
+   to save space/clutter, as 'boxes' are the focus. 
+   Actually, let's keep the marker but positioned relative to the card? 
+   The user wants "smaller boxes", "adjust all in screen".
+   Let's hide the side markers for the grid view to keep it clean.
+*/
+.roadmap_phase_marker {
+    display: none;
+}
+
+.roadmap_card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    /* Slightly smaller radius */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
+    /* Full height for grid alignment */
+}
+
+.roadmap_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(11, 144, 43, 0.5);
+}
+
+.roadmap_card_overlay {
+    background: rgba(255, 255, 255, 0.1);
+    /* Light overlay for black text readability */
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clear text shadows for black text style */
+.roadmap_phase_title,
+.roadmap_goals_list li,
+.roadmap_focus p {
+    text-shadow: none;
+}
+
+.roadmap_phase_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: none;
+    /* Removed border as header has its own background */
+    padding-bottom: 0;
+}
+
+.roadmap_phase_title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* Black text */
+    margin: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    /* User request: background with border radius 8px */
+    background: #000000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.roadmap_goals_list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.roadmap_goals_list li {
+    font-size: 0.95rem;
+    color: #000;
+    /* Black text */
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.roadmap_goals_list li::before {
+    content: '•';
+    color: #0B902B;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+/* User request: remove focus on bottom but keep space */
+.roadmap_focus {
+    margin-top: auto;
+    background: transparent;
+    padding: 20px;
+    /* Keep padding to reserve space */
+    border-radius: 8px;
+    border-left: none;
+    opacity: 0;
+    /* Hide the text but keep the element occupying space */
+    pointer-events: none;
+}
+
+.roadmap_focus p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: transparent;
+    font-style: italic;
+}
+
+/* Decoration Shapes */
+.shape_bg_glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(11, 144, 43, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .roadmap_vision_wrapper {
+        position: static;
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .roadmap_vision_title {
+        font-size: 2rem;
+    }
+
+    .roadmap_timeline_wrapper {
+        padding-left: 15px;
+        /* Reduce padding on mobile */
+        border-left: 2px dashed rgba(255, 255, 255, 0.1);
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+
+    .roadmap_phase_marker {
+        display: flex;
+        /* Show marker on mobile if we want, or keep hidden */
+        left: -29px;
+    }
+}

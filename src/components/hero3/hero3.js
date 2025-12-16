@@ -19,10 +19,10 @@ const Hero3 = () => {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <h1 className="hero_title text-uppercase" data-aos="fade-up" data-aos-duration="800">
-              Meet <mark>$BOLT</mark>
+              Welcome to <mark>BoltDeFi</mark>
             </h1>
             <p className="hero_description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              The Fastest Meme on the Blockchain. Blink once, your bags grow. Blink twice, you missed the pump. A lightning-charged memecoin built for DeFi speed freaks.
+              BoltDeFi is a high-performance decentralized finance (DeFi) protocol designed for sustainable yield generation, liquidity efficiency, and transparent governance. Our mission is to deliver next-generation DeFi tools that combine speed, simplicity, and long-term value creation.
             </p>
             <ul className="btns_group unordered_list p-0" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
               <li>
